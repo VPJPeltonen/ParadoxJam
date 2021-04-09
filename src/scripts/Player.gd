@@ -21,6 +21,11 @@ func _process(delta):
 		$CPUParticles.emitting = true
 		jump_ready = false
 		$JumpCooldown.start()
+	elif Input.is_action_pressed("jump") and $WallJumpRange.get_overlapping_bodies().size() >= 1 and jump_ready:
+		jump_power += Vector3(0,300,0)
+		jump_ready = false
+		$JumpCooldown.start()
+		fall_power = fall_power/2
 	if $Feet.get_overlapping_bodies().size() <= 1:
 		fall_power -= Game.gravity
 	else:
