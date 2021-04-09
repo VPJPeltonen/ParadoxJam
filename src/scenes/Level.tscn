@@ -1,80 +1,100 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/scripts/Camera.gd" type="Script" id=2]
+[ext_resource path="res://src/scripts/Map.gd" type="Script" id=3]
+[ext_resource path="res://src/scenes/Tile1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/scripts/Teleporter.gd" type="Script" id=5]
+[ext_resource path="res://src/scripts/UI.gd" type="Script" id=6]
 
 [sub_resource type="CubeMesh" id=1]
 
-[sub_resource type="BoxShape" id=6]
+[sub_resource type="BoxShape" id=2]
 
-[sub_resource type="BoxShape" id=9]
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 1, 40.8443, 1 )
 
-[sub_resource type="CubeMesh" id=10]
+[sub_resource type="Animation" id=4]
+resource_name = "Teleport"
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.7, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
 
 [node name="Level" type="Spatial"]
 
 [node name="Floor" type="StaticBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 26.2764, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 190.087, 0, 0, 0 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Floor"]
 mesh = SubResource( 1 )
 material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="Floor"]
-shape = SubResource( 6 )
+shape = SubResource( 2 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 23.7327, 5.56141, 0 )
 script = ExtResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.98887, 0 )
 
-[node name="StaticBody" type="StaticBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1.61665, 0, 0, 0, 3.33653, 0, 8.67879, -7.96953 )
+[node name="Map" type="Spatial" parent="."]
+script = ExtResource( 3 )
+Tile = ExtResource( 4 )
 
-[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
-shape = SubResource( 9 )
+[node name="Positions" type="Spatial" parent="Map"]
 
-[node name="MeshInstance" type="MeshInstance" parent="StaticBody"]
-mesh = SubResource( 10 )
-material/0 = null
+[node name="Position3D" type="Position3D" parent="Map/Positions"]
 
-[node name="StaticBody2" type="StaticBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1.61665, 0, 0, 0, 3.33653, 0, 8.67879, 9.93559 )
+[node name="Position3D2" type="Position3D" parent="Map/Positions"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -49.5819 )
 
-[node name="CollisionShape" type="CollisionShape" parent="StaticBody2"]
-shape = SubResource( 9 )
+[node name="Tiles" type="Spatial" parent="Map"]
 
-[node name="MeshInstance" type="MeshInstance" parent="StaticBody2"]
-mesh = SubResource( 10 )
-material/0 = null
+[node name="Teleporter" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -159.961 )
+script = ExtResource( 5 )
 
-[node name="StaticBody3" type="StaticBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1.61665, 0, 0, 0, 3.33653, 0, 16.3311, 4.93799 )
+[node name="CollisionShape" type="CollisionShape" parent="Teleporter"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 35.9751, 0 )
+shape = SubResource( 3 )
 
-[node name="CollisionShape" type="CollisionShape" parent="StaticBody3"]
-shape = SubResource( 9 )
+[node name="Position3D" type="Position3D" parent="Teleporter"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 222.269 )
 
-[node name="MeshInstance" type="MeshInstance" parent="StaticBody3"]
-mesh = SubResource( 10 )
-material/0 = null
+[node name="Timer" type="Timer" parent="Teleporter"]
+wait_time = 0.5
+one_shot = true
 
-[node name="StaticBody4" type="StaticBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1.61665, 0, 0, 0, 3.33653, 0, 16.3311, -15.0174 )
+[node name="UI" type="Control" parent="." groups=[
+"UI",
+]]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="CollisionShape" type="CollisionShape" parent="StaticBody4"]
-shape = SubResource( 9 )
+[node name="ColorRect" type="ColorRect" parent="UI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 1, 1, 1, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="MeshInstance" type="MeshInstance" parent="StaticBody4"]
-mesh = SubResource( 10 )
-material/0 = null
-
-[node name="StaticBody5" type="StaticBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 21.0653, 0, 0, 0, 3.33653, 0, 16.3311, 16.5605 )
-
-[node name="CollisionShape" type="CollisionShape" parent="StaticBody5"]
-shape = SubResource( 9 )
-
-[node name="MeshInstance" type="MeshInstance" parent="StaticBody5"]
-mesh = SubResource( 10 )
-material/0 = null
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI"]
+anims/Teleport = SubResource( 4 )
+[connection signal="body_entered" from="Teleporter" to="Teleporter" method="_on_Teleporter_body_entered"]
+[connection signal="timeout" from="Teleporter/Timer" to="Teleporter" method="_on_Timer_timeout"]

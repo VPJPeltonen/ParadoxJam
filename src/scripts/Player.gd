@@ -16,12 +16,12 @@ func _process(delta):
 		dir += Vector3(0,0,1)*speed
 	elif Input.is_action_pressed("right"):
 		dir -= Vector3(0,0,1)*speed
-	if Input.is_action_pressed("jump") and $Feet.get_overlapping_bodies().size() >= 1 and jump_ready:
+	if Input.is_action_pressed("jump") and $Feet.get_overlapping_bodies().size() > 1 and jump_ready:
 		jump_power += Vector3(0,300,0)
 		$CPUParticles.emitting = true
 		jump_ready = false
 		$JumpCooldown.start()
-	elif Input.is_action_pressed("jump") and $WallJumpRange.get_overlapping_bodies().size() >= 1 and jump_ready:
+	elif Input.is_action_pressed("jump") and $WallJumpRange.get_overlapping_bodies().size() > 1 and jump_ready:
 		jump_power += Vector3(0,300,0)
 		jump_ready = false
 		$JumpCooldown.start()

@@ -1,0 +1,89 @@
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="BoxShape" id=9]
+
+[sub_resource type="CubeMesh" id=10]
+
+[sub_resource type="PlaneMesh" id=11]
+size = Vector2( 3, 3 )
+subdivide_width = 5
+subdivide_depth = 5
+
+[node name="Map" type="Spatial"]
+
+[node name="StaticBody" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.61665, 0, 0, 0, 3.33653, 0, 8.67879, -7.96953 )
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+shape = SubResource( 9 )
+
+[node name="MeshInstance" type="MeshInstance" parent="StaticBody"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="StaticBody2" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.61665, 0, 0, 0, 3.33653, 0, 8.67879, 9.93559 )
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody2"]
+shape = SubResource( 9 )
+
+[node name="MeshInstance" type="MeshInstance" parent="StaticBody2"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="StaticBody3" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.61665, 0, 0, 0, 3.33653, 0, 16.3311, 4.93799 )
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody3"]
+shape = SubResource( 9 )
+
+[node name="MeshInstance" type="MeshInstance" parent="StaticBody3"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="StaticBody4" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1.61665, 0, 0, 0, 3.33653, 0, 16.3311, -15.0174 )
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody4"]
+shape = SubResource( 9 )
+
+[node name="MeshInstance" type="MeshInstance" parent="StaticBody4"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="StaticBody5" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 21.0653, 0, 0, 0, 3.33653, 0, 16.3311, 16.5605 )
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody5"]
+shape = SubResource( 9 )
+
+[node name="MeshInstance" type="MeshInstance" parent="StaticBody5"]
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="SoftBody" type="SoftBody" parent="StaticBody5"]
+transform = Transform( -0.114869, 0.990336, -0.0777152, 0.0471176, 0.00527952, -0.00236576, -0.0122015, -0.0248343, -0.298432, 0.545401, -0.435166, -3.08249 )
+mesh = SubResource( 11 )
+material/0 = null
+pinned_points = [ 45, 47, 46, 48, 44, 43, 42 ]
+attachments/0/point_index = 45
+attachments/0/spatial_attachment_path = NodePath("../../StaticBody2/MeshInstance")
+attachments/0/offset = Vector3( 0.661973, -0.890628, -0.649279 )
+attachments/1/point_index = 47
+attachments/1/spatial_attachment_path = NodePath("../../StaticBody2/MeshInstance")
+attachments/1/offset = Vector3( 0.776842, -1.50458, -0.637078 )
+attachments/2/point_index = 46
+attachments/2/spatial_attachment_path = NodePath("../../StaticBody2/MeshInstance")
+attachments/2/offset = Vector3( 0.719408, -1.1976, -0.643179 )
+attachments/3/point_index = 48
+attachments/3/spatial_attachment_path = NodePath("../../StaticBody2/MeshInstance")
+attachments/3/offset = Vector3( 0.834277, -1.81156, -0.630977 )
+attachments/4/point_index = 44
+attachments/4/spatial_attachment_path = NodePath("../../StaticBody2/MeshInstance")
+attachments/4/offset = Vector3( 0.604539, -0.583652, -0.65538 )
+attachments/5/point_index = 43
+attachments/5/spatial_attachment_path = NodePath("../../StaticBody2/MeshInstance")
+attachments/5/offset = Vector3( 0.547104, -0.276677, -0.661481 )
+attachments/6/point_index = 42
+attachments/6/spatial_attachment_path = NodePath("../../StaticBody2/MeshInstance")
+attachments/6/offset = Vector3( 0.48967, 0.0302991, -0.667582 )
