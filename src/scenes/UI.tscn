@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://src/scripts/UI.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/Boldfont.tres" type="DynamicFont" id=2]
 [ext_resource path="res://assets/textures/white.png" type="Texture" id=3]
+[ext_resource path="res://assets/fonts/theboldfont.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Teleport"
@@ -18,6 +19,11 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
+
+[sub_resource type="DynamicFont" id=8]
+size = 48
+outline_size = 4
+font_data = ExtResource( 4 )
 
 [sub_resource type="Shader" id=2]
 code = "shader_type canvas_item;
@@ -85,7 +91,7 @@ anchor_bottom = 1.0
 mouse_filter = 2
 
 [node name="Label" type="Label" parent="GameOverScreen"]
-anchor_top = 0.5
+anchor_top = 0.3
 anchor_right = 1.0
 anchor_bottom = 0.5
 margin_top = -7.0
@@ -94,6 +100,22 @@ custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "Game Over"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Loops" type="Label" parent="GameOverScreen"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -7.0
+margin_bottom = 7.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "Loops Completed: 5"
 align = 1
 valign = 1
 __meta__ = {
@@ -125,14 +147,47 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="ActionUI"]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -171.0
+[node name="Time" type="Label" parent="ActionUI"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -100.5
+margin_right = 100.5
 margin_bottom = 55.0
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "00:00"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoopCounter" type="HBoxContainer" parent="ActionUI"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 13
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ActionUI/LoopCounter"]
+margin_top = 4.0
+margin_right = 108.0
+margin_bottom = 36.0
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "0:00:00"
+text = "Loops:"
+align = 1
+valign = 1
+
+[node name="Value" type="Label" parent="ActionUI/LoopCounter"]
+margin_left = 121.0
+margin_top = 4.0
+margin_right = 145.0
+margin_bottom = 36.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0"
 align = 1
 valign = 1
 
