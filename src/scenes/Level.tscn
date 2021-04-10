@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://src/scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/scripts/Camera.gd" type="Script" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://src/scripts/Teleporter.gd" type="Script" id=5]
 [ext_resource path="res://src/scenes/UI.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/scenes/Ghost.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/scenes/Tile2.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/scenes/Tile3.tscn" type="PackedScene" id=9]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -18,7 +20,7 @@ extents = Vector3( 1, 40.8443, 1 )
 [node name="Level" type="Spatial"]
 
 [node name="Floor" type="StaticBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 190.087, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 250, 0, 0, 0 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Floor"]
 mesh = SubResource( 1 )
@@ -32,18 +34,50 @@ transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 23.7327
 script = ExtResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0 )
+transform = Transform( 0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 5, 0 )
 
 [node name="Map" type="Spatial" parent="."]
 script = ExtResource( 3 )
 Tile = ExtResource( 4 )
+Tile2 = ExtResource( 8 )
+Tile3 = ExtResource( 9 )
 
 [node name="Positions" type="Spatial" parent="Map"]
 
 [node name="Position3D" type="Position3D" parent="Map/Positions"]
 
 [node name="Position3D2" type="Position3D" parent="Map/Positions"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -49.5819 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -32 )
+
+[node name="Position3D3" type="Position3D" parent="Map/Positions"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -64 )
+
+[node name="Position3D4" type="Position3D" parent="Map/Positions"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 0 )
+
+[node name="Position3D5" type="Position3D" parent="Map/Positions"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, -32 )
+
+[node name="Position3D6" type="Position3D" parent="Map/Positions"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, -64 )
+
+[node name="Position3D7" type="Position3D" parent="Map/Positions"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -96 )
+
+[node name="Position3D8" type="Position3D" parent="Map/Positions"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, -96 )
+
+[node name="Position3D9" type="Position3D" parent="Map/Positions"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -128 )
+
+[node name="Position3D10" type="Position3D" parent="Map/Positions"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, -128 )
+
+[node name="Position3D11" type="Position3D" parent="Map/Positions"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -160 )
+
+[node name="Position3D12" type="Position3D" parent="Map/Positions"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, -160 )
 
 [node name="Tiles" type="Spatial" parent="Map"]
 
@@ -53,7 +87,7 @@ script = ExtResource( 5 )
 ghost = ExtResource( 7 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Teleporter"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 35.9751, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 35.975, -32 )
 shape = SubResource( 3 )
 
 [node name="PortPos" type="Position3D" parent="Teleporter"]
