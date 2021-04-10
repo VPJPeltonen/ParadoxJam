@@ -48,6 +48,10 @@ func stop_recording():
 func start_recording():
 	$RecordTimer.start()
 
+func die():
+	$AnimationPlayer.play("Explode")
+	get_tree().call_group("UI","show_game_over")
+
 func _on_JumpCooldown_timeout():
 	jump_ready = true
 

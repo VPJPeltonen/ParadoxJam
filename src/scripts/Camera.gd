@@ -10,6 +10,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if player == null:
+		player = get_tree().get_nodes_in_group("Player")[0]
 	var target = Vector3(global_transform.origin.x,
 						player.global_transform.origin.y+2,
 						player.global_transform.origin.z)

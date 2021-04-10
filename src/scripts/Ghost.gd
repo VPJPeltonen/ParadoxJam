@@ -38,3 +38,7 @@ func _on_Area_body_entered(body):
 	if body.is_in_group("Player"):
 		body.start_recording()
 		started = true
+
+func _on_Ghost_body_entered(body):
+	if body.is_in_group("Player"):
+		body.die()
