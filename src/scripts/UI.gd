@@ -5,6 +5,7 @@ func _process(delta):
 	$ActionUI/Label.text = format_time(30-player.time)
 
 func show_game_over():
+	$GameOverScreen/RestartButton.grab_focus()
 	$GameOverScreen/GameOverTimer.start()
 
 func teleport():
