@@ -104,5 +104,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 159.961 )
 mouse_filter = 2
 
 [node name="Ghosts" type="Spatial" parent="."]
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.598674, 0.800993, 0, -0.800993, 0.598674, 0, 13.0285, 0 )
 [connection signal="body_entered" from="Teleporter" to="Teleporter" method="_on_Teleporter_body_entered"]
 [connection signal="timeout" from="Teleporter/Timer" to="Teleporter" method="_on_Timer_timeout"]
