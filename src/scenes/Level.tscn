@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://src/scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/scripts/Camera.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://src/scenes/Ghost.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/scenes/Tile2.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/scenes/Tile3.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/audio/exit.wav" type="AudioStream" id=10]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -96,6 +97,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 222.269 )
 [node name="Timer" type="Timer" parent="Teleporter"]
 wait_time = 0.5
 one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Teleporter"]
+stream = ExtResource( 10 )
+volume_db = -20.0
 
 [node name="StartPos" type="Position3D" parent="Teleporter"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 159.961 )

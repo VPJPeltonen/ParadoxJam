@@ -24,3 +24,4 @@ func _on_Timer_timeout():
 										$PortPos.global_transform.origin.z)
 	get_tree().call_group("Ghost","reset")
 	make_ghost(player.recorder.get_record())
+	$AudioStreamPlayer.play()

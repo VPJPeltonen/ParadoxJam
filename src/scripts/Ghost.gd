@@ -8,7 +8,7 @@ var speed = 2
 var started = false
 var spawn_pos
 
-func _physics_process(delta):
+func _process(delta):
 	if !Game.running:
 		return
 	if path.empty():
@@ -17,11 +17,13 @@ func _physics_process(delta):
 		return
 	if point >= path.size():
 		return
-	t += delta * 22
+	t += delta * 20
 	global_transform.origin = start_pos.linear_interpolate(path[point], t)
-	if global_transform.origin.distance_to(path[point]) < 0.01:
+	print(t)
+	if global_transform.origin.distance_to(path[point]) < 0.1 or t > 1:
 		start_pos = global_transform.origin
 		point += 1
+		print("next point" + str(point))
 		t = 0.0
 	#print(str(global_transform.origin) + "/" + str(path[point]))
 
@@ -29,15 +31,17 @@ func init(data):
 	path = data
 	global_transform.origin = path[0]
 	start_pos = path[0]
+	point = 1
 	spawn_pos = global_transform.origin
 
 func reset():
 	started = false
 	global_transform.origin = spawn_pos
-	point = 0
+	point = 1
 	t = 0.0
 
 func _on_Area_body_entered(body):
+	#print("stuff")
 	if body.is_in_group("Player"):
 		body.start_recording()
 		started = true
