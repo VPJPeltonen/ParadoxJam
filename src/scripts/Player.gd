@@ -10,11 +10,17 @@ var recorder
 var time = 0.0
 var time_running = true
 
+
 func _ready():
 	recorder = recorder_class.new()
 	$RecordTimer.start()
 
 func _process(delta):
+	if !Game.running:
+		$RecordTimer.stop()
+		return
+	elif $RecordTimer.is_stopped():
+		$RecordTimer.start()
 	if time_running:
 		time += delta
 		if time > 30:
@@ -22,6 +28,8 @@ func _process(delta):
 			die()
 	
 func _physics_process(delta):
+	if !Game.running:
+		return
 	var dir :Vector3 = velocity*0.9
 	if Input.is_action_pressed("left"):
 		dir += Vector3(0,0,1)*speed
@@ -61,6 +69,7 @@ func start_recording():
 func die():
 	$AnimationPlayer.play("Explode")
 	get_tree().call_group("UI","show_game_over")
+	Game.running = false
 
 func _on_JumpCooldown_timeout():
 	jump_ready = true

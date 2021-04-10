@@ -9,6 +9,8 @@ var started = false
 var spawn_pos
 
 func _physics_process(delta):
+	if !Game.running:
+		return
 	if path.empty():
 		return
 	if !started:
@@ -25,7 +27,7 @@ func _physics_process(delta):
 
 func init(data):
 	path = data
-	start_pos = global_transform.origin
+	start_pos = path[0]
 	spawn_pos = global_transform.origin
 
 func reset():

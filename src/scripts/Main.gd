@@ -9,3 +9,8 @@ func Restart_Game():
 		kid.queue_free()
 	var new_level = level.instance()
 	$LevelHolder.add_child(new_level)
+	$MainUI.show()
+
+func _on_Button_pressed():
+	$MainUI.hide()
+	Game.running = true
