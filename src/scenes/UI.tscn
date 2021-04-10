@@ -143,5 +143,8 @@ anchor_bottom = 1.0
 mouse_filter = 2
 texture = ExtResource( 3 )
 expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="timeout" from="GameOverScreen/GameOverTimer" to="." method="_on_GameOverTimer_timeout"]
 [connection signal="pressed" from="GameOverScreen/RestartButton" to="." method="_on_RestartButton_pressed"]
