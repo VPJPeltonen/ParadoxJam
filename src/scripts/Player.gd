@@ -5,10 +5,12 @@ var velocity: Vector3 = Vector3(0,0,0)
 var jump_power :Vector3= Vector3(0,0,0)
 var fall_power :Vector3= Vector3(0,0,0)
 var jump_ready :bool = true
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+var recorder_class = load("res://src/scripts/recorder.gd")
+var recorder
 
+func _ready():
+	recorder = recorder_class.new()
+	$RecordTimer.start()
 
 func _process(delta):
 	var dir :Vector3 = velocity*0.9
@@ -40,6 +42,14 @@ func _process(delta):
 	move_and_slide(dir*delta)
 	print($Feet.get_overlapping_bodies().size())
 
+func stop_recording():
+	$RecordTimer.stop()
+
+func start_recording():
+	$RecordTimer.start()
 
 func _on_JumpCooldown_timeout():
 	jump_ready = true
+
+func _on_RecordTimer_timeout():
+	recorder.record(self)
