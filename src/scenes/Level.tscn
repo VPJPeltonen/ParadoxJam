@@ -54,31 +54,31 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -32 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -64 )
 
 [node name="Position3D4" type="Position3D" parent="Map/Positions"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 24, 0 )
 
 [node name="Position3D5" type="Position3D" parent="Map/Positions"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, -32 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 24, -32 )
 
 [node name="Position3D6" type="Position3D" parent="Map/Positions"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, -64 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 24, -64 )
 
 [node name="Position3D7" type="Position3D" parent="Map/Positions"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -96 )
 
 [node name="Position3D8" type="Position3D" parent="Map/Positions"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, -96 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 24, -96 )
 
 [node name="Position3D9" type="Position3D" parent="Map/Positions"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -128 )
 
 [node name="Position3D10" type="Position3D" parent="Map/Positions"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, -128 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 24, -128 )
 
 [node name="Position3D11" type="Position3D" parent="Map/Positions"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -160 )
 
 [node name="Position3D12" type="Position3D" parent="Map/Positions"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, -160 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 24, -160 )
 
 [node name="Tiles" type="Spatial" parent="Map"]
 

@@ -16,6 +16,9 @@ func _process(delta):
 	if !started:
 		return
 	if point >= path.size():
+		$Active.hide()
+		$Inactive.show()
+		started = false
 		return
 	t += delta * 20
 	global_transform.origin = start_pos.linear_interpolate(path[point], t)
