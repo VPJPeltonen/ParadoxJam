@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://src/scripts/UI.gd" type="Script" id=1]
-[ext_resource path="res://assets/fonts/theboldfont.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/fonts/Boldfont.tres" type="DynamicFont" id=2]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Teleport"
@@ -17,11 +17,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
-
-[sub_resource type="DynamicFont" id=2]
-size = 32
-outline_size = 4
-font_data = ExtResource( 2 )
 
 [node name="UI" type="Control" groups=[
 "UI",
@@ -55,7 +50,7 @@ anchor_right = 1.0
 anchor_bottom = 0.5
 margin_top = -7.0
 margin_bottom = 7.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "Game Over"
@@ -81,5 +76,24 @@ text = "Restart"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ActionUI" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ActionUI"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -171.0
+margin_bottom = 55.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "0:00:00"
+align = 1
+valign = 1
 [connection signal="timeout" from="GameOverScreen/GameOverTimer" to="." method="_on_GameOverTimer_timeout"]
 [connection signal="pressed" from="GameOverScreen/RestartButton" to="." method="_on_RestartButton_pressed"]

@@ -7,12 +7,21 @@ var fall_power :Vector3= Vector3(0,0,0)
 var jump_ready :bool = true
 var recorder_class = load("res://src/scripts/recorder.gd")
 var recorder
+var time = 0.0
+var time_running = true
 
 func _ready():
 	recorder = recorder_class.new()
 	$RecordTimer.start()
 
 func _process(delta):
+	if time_running:
+		time += delta
+		if time > 30:
+			time_running = false
+			die()
+	
+func _physics_process(delta):
 	var dir :Vector3 = velocity*0.9
 	if Input.is_action_pressed("left"):
 		dir += Vector3(0,0,1)*speed
@@ -31,7 +40,6 @@ func _process(delta):
 	if $Feet.get_overlapping_bodies().size() <= 1:
 		fall_power -= Game.gravity
 	else:
-		print("grounded")
 		dir = Vector3(dir.x,0,dir.z)
 		fall_power = Vector3(0,0,0)
 	dir += jump_power
@@ -40,13 +48,15 @@ func _process(delta):
 	#print(jump_power)
 	velocity = dir
 	move_and_slide(dir*delta)
-	print($Feet.get_overlapping_bodies().size())
 
 func stop_recording():
 	$RecordTimer.stop()
+	time_running = false
+	time = 0
 
 func start_recording():
 	$RecordTimer.start()
+	time_running = true
 
 func die():
 	$AnimationPlayer.play("Explode")

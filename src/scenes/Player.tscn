@@ -17,12 +17,11 @@ height = 0.47286
 
 [sub_resource type="SphereMesh" id=6]
 
-[sub_resource type="SpatialMaterial" id=8]
+[sub_resource type="SpatialMaterial" id=7]
 params_cull_mode = 2
 albedo_color = Color( 1, 0, 0, 1 )
 
-[sub_resource type="Animation" id=7]
-resource_name = "Explode"
+[sub_resource type="Animation" id=8]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Explosion:visible")
@@ -101,9 +100,9 @@ wait_time = 0.05
 
 [node name="Explosion" type="MeshInstance" parent="."]
 mesh = SubResource( 6 )
-material/0 = SubResource( 8 )
+material/0 = SubResource( 7 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Explode = SubResource( 7 )
+anims/Explode = SubResource( 8 )
 [connection signal="timeout" from="JumpCooldown" to="." method="_on_JumpCooldown_timeout"]
 [connection signal="timeout" from="RecordTimer" to="." method="_on_RecordTimer_timeout"]
