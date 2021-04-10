@@ -30,6 +30,8 @@ func _process(delta):
 		return
 	elif $RecordTimer.is_stopped() and time_running:
 		$RecordTimer.start()
+	if Input.is_action_just_pressed("taunt"):
+		$Ohmygod.play()
 	if time_running:
 		time += delta
 		if time > 30:
