@@ -17,7 +17,7 @@ func _physics_process(delta):
 		return
 	if point >= path.size():
 		return
-	t += delta * 20
+	t += delta * 22
 	global_transform.origin = start_pos.linear_interpolate(path[point], t)
 	if global_transform.origin.distance_to(path[point]) < 0.01:
 		start_pos = global_transform.origin
@@ -27,6 +27,7 @@ func _physics_process(delta):
 
 func init(data):
 	path = data
+	global_transform.origin = path[0]
 	start_pos = path[0]
 	spawn_pos = global_transform.origin
 

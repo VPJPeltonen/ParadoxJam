@@ -12,6 +12,7 @@ func make_ghost(data):
 func _on_Teleporter_body_entered(body):
 	if body.is_in_group("Player"):
 		player = body
+		player.stop_recording()
 		$Timer.start()
 		get_tree().call_group("UI","teleport")
 	#elif body.is_in_group("Ghost"):
@@ -23,4 +24,3 @@ func _on_Timer_timeout():
 										$PortPos.global_transform.origin.z)
 	get_tree().call_group("Ghost","reset")
 	make_ghost(player.recorder.get_record())
-	player.stop_recording()

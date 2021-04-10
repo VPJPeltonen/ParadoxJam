@@ -19,7 +19,7 @@ func _process(delta):
 	if !Game.running:
 		$RecordTimer.stop()
 		return
-	elif $RecordTimer.is_stopped():
+	elif $RecordTimer.is_stopped() and time_running:
 		$RecordTimer.start()
 	if time_running:
 		time += delta
