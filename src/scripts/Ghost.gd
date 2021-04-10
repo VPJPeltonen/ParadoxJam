@@ -39,13 +39,20 @@ func reset():
 	global_transform.origin = spawn_pos
 	point = 1
 	t = 0.0
+	$Active.hide()
+	$Inactive.show()
+	$CollisionShape.disabled = true
 
 func _on_Area_body_entered(body):
 	#print("stuff")
-	if body.is_in_group("Player"):
+	if body.is_in_group("Player") and !started:
 		body.start_recording()
 		started = true
+		$AudioStreamPlayer.play()
+		$Active.show()
+		$Inactive.hide()
+		$CollisionShape.disabled = false
 
 func _on_Ghost_body_entered(body):
-	if body.is_in_group("Player"):
+	if body.is_in_group("Player") and started:
 		body.die()
