@@ -8,7 +8,7 @@ var speed = 2
 var started = false
 var spawn_pos
 
-func _process(delta):
+func _physics_process(delta):
 	if path.empty():
 		return
 	if !started:
