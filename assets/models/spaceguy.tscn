@@ -161,7 +161,7 @@ animation = "death"
 animation = "Wall slide"
 
 [sub_resource type="AnimationNodeBlendTree" id=14]
-graph_offset = Vector2( 434, 38 )
+graph_offset = Vector2( 325, 143 )
 nodes/DEAD/node = SubResource( 16 )
 nodes/DEAD/position = Vector2( 1200, 60 )
 nodes/MOVE/node = SubResource( 10 )

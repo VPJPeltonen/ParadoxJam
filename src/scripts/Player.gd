@@ -7,6 +7,7 @@ export(AudioStream) var grunt4
 export(AudioStream) var grunt5
 export(AudioStream) var grunt6
 
+var status = "Normal"
 var speed: int = 100
 var velocity: Vector3 = Vector3(0,0,0)
 var jump_power :Vector3= Vector3(0,0,0)
@@ -115,3 +116,8 @@ func _on_JumpCooldown_timeout():
 
 func _on_RecordTimer_timeout():
 	recorder.record(self)
+
+
+func _on_RecordStart_body_entered(body):
+	if body.is_in_group("Player"):
+		start_recording()

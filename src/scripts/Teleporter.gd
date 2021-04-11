@@ -12,6 +12,7 @@ func make_ghost(data):
 func _on_Teleporter_body_entered(body):
 	if body.is_in_group("Player"):
 		player = body
+		player.status = "Teleporting"
 		player.stop_recording()
 		$Timer.start()
 		get_tree().call_group("UI","teleport")

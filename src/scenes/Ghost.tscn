@@ -68,11 +68,10 @@ bind/14/name = "calf_r"
 bind/14/bone = -1
 bind/14/pose = Transform( -1, 1.22572e-12, -1.7325e-06, -5.88793e-14, -1, -6.73497e-07, -1.7325e-06, -6.73497e-07, 1, -0.343716, 0.938148, 0.00140979 )
 
-[sub_resource type="SpatialMaterial" id=24]
+[sub_resource type="SpatialMaterial" id=3]
 albedo_color = Color( 1, 0, 0, 1 )
 
-[sub_resource type="Animation" id=3]
-resource_name = "Running"
+[sub_resource type="Animation" id=4]
 length = 0.625
 loop = true
 tracks/0/type = "transform"
@@ -181,8 +180,7 @@ tracks/14/imported = true
 tracks/14/enabled = true
 tracks/14/keys = PoolRealArray( 0, 1, -0.0288214, 0.326231, 0.0230897, 0.12878, -4.41643e-06, 4.30416e-05, 0.991673, 1, 1, 1, 0.0666667, 1, -0.0243381, 0.275484, 0.019498, 0.128777, 0.00586336, 0.000805058, 0.991656, 1, 1, 1, 0.133333, 1, -0.00597778, 0.0676627, 0.00478897, 0.128663, 0.0419875, 0.00549611, 0.990784, 1, 1, 1, 0.2, 1, -0.00270201, 0.0305842, 0.00216466, 0.128121, 0.0998499, 0.01301, 0.986634, 1, 1, 1, 0.266667, 1, -0.0137802, 0.155979, 0.0110398, 0.127256, 0.151788, 0.0197544, 0.979988, 1, 1, 1, 0.333333, 1, -0.0216161, 0.244673, 0.0173173, 0.126718, 0.176396, 0.0229499, 0.975859, 1, 1, 1, 0.4, 1, -0.0137802, 0.155979, 0.0110398, 0.127256, 0.151788, 0.0197544, 0.979988, 1, 1, 1, 0.466667, 1, -0.00270201, 0.0305842, 0.00216466, 0.128121, 0.0998499, 0.01301, 0.986634, 1, 1, 1, 0.533333, 1, -0.00597778, 0.0676627, 0.00478897, 0.128663, 0.0419876, 0.00549615, 0.990784, 1, 1, 1, 0.6, 1, -0.0243381, 0.275484, 0.019498, 0.128777, 0.00586336, 0.00080505, 0.991656, 1, 1, 1, 0.625, 1, -0.0288214, 0.326231, 0.0230897, 0.12878, -4.41643e-06, 4.30416e-05, 0.991673, 1, 1, 1 )
 
-[sub_resource type="Animation" id=4]
-resource_name = "Running001"
+[sub_resource type="Animation" id=5]
 length = 1.04167
 loop = true
 tracks/0/type = "transform"
@@ -291,7 +289,7 @@ tracks/14/imported = true
 tracks/14/enabled = true
 tracks/14/keys = PoolRealArray( 0, 1, 0, 0, 0, 0.12878, -4.41643e-06, 4.30416e-05, 0.991673, 1, 1, 1, 0.0666667, 1, 0, 0, 0, 0.128779, 0.00246153, 0.000363297, 0.99167, 1, 1, 1, 0.133333, 1, 0, 0, 0, 0.128756, 0.0187671, 0.00248073, 0.991496, 1, 1, 1, 0.2, 1, 0, 0, 0, 0.12862, 0.0490067, 0.00640765, 0.990462, 1, 1, 1, 0.4, 1, 0, 0, 0, 0.127199, 0.154555, 0.0201138, 0.979555, 1, 1, 1, 0.466667, 1, 0, 0, 0, 0.126794, 0.173159, 0.0225296, 0.976438, 1, 1, 1, 0.533333, 1, 0, 0, 0, 0.126773, 0.174056, 0.022646, 0.976279, 1, 1, 1, 0.6, 1, 0, 0, 0, 0.127079, 0.160324, 0.0208629, 0.978628, 1, 1, 1, 0.666667, 1, 0, 0, 0, 0.12754, 0.136953, 0.0178281, 0.982171, 1, 1, 1, 0.933333, 1, 0, 0, 0, 0.128756, 0.0188312, 0.00248907, 0.991494, 1, 1, 1, 1, 1, 0, 0, 0, 0.128779, 0.00296716, 0.000428967, 0.991669, 1, 1, 1, 1.04167, 1, 0, 0, 0, 0.12878, -4.41643e-06, 4.30416e-05, 0.991673, 1, 1, 1 )
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=6]
 resource_name = "Walking"
 length = 1.04167
 loop = true
@@ -401,8 +399,7 @@ tracks/14/imported = true
 tracks/14/enabled = true
 tracks/14/keys = PoolRealArray( 0, 1, 0, 0, 0, 0.12878, -4.41643e-06, 4.30416e-05, 0.991673, 1, 1, 1, 0.0666667, 1, 0, 0, 0, 0.128779, 0.00246153, 0.000363297, 0.99167, 1, 1, 1, 0.133333, 1, 0, 0, 0, 0.128756, 0.0187671, 0.00248073, 0.991496, 1, 1, 1, 0.2, 1, 0, 0, 0, 0.12862, 0.0490067, 0.00640765, 0.990462, 1, 1, 1, 0.4, 1, 0, 0, 0, 0.127199, 0.154555, 0.0201138, 0.979555, 1, 1, 1, 0.466667, 1, 0, 0, 0, 0.126794, 0.173159, 0.0225296, 0.976438, 1, 1, 1, 0.533333, 1, 0, 0, 0, 0.126773, 0.174056, 0.022646, 0.976279, 1, 1, 1, 0.6, 1, 0, 0, 0, 0.127079, 0.160324, 0.0208629, 0.978628, 1, 1, 1, 0.666667, 1, 0, 0, 0, 0.12754, 0.136953, 0.0178281, 0.982171, 1, 1, 1, 0.933333, 1, 0, 0, 0, 0.128756, 0.0188312, 0.00248907, 0.991494, 1, 1, 1, 1, 1, 0, 0, 0, 0.128779, 0.00296716, 0.000428967, 0.991669, 1, 1, 1, 1.04167, 1, 0, 0, 0, 0.12878, -4.41643e-06, 4.30416e-05, 0.991673, 1, 1, 1 )
 
-[sub_resource type="Animation" id=5]
-resource_name = "Wall slide"
+[sub_resource type="Animation" id=7]
 length = 0.0416667
 loop = true
 tracks/0/type = "transform"
@@ -511,8 +508,7 @@ tracks/14/imported = true
 tracks/14/enabled = true
 tracks/14/keys = PoolRealArray( 0, 1, 0, 0, 0, 0.0977526, -5.81712e-06, 4.29072e-05, 0.995211, 1, 1, 1, 0.0416667, 1, 0, 0, 0, 0.0977526, -5.81712e-06, 4.29072e-05, 0.995211, 1, 1, 1 )
 
-[sub_resource type="Animation" id=6]
-resource_name = "death"
+[sub_resource type="Animation" id=8]
 length = 0.625
 tracks/0/type = "transform"
 tracks/0/path = NodePath("Armature001/Skeleton:head")
@@ -620,8 +616,7 @@ tracks/14/imported = true
 tracks/14/enabled = true
 tracks/14/keys = PoolRealArray( 0, 1, 0, 0, 0, -7.45058e-09, -1.39698e-09, 7.45058e-09, 1, 1, 1, 1, 0.0666667, 1, 0, 0, 0, 0.000339029, 1.75515e-05, -7.39567e-05, 1, 1, 1, 1, 0.133333, 1, 0, 0, 0, -0.0011995, -6.20371e-05, 0.000261687, 0.999999, 1, 1, 1, 0.2, 1, 0, 0, 0, -0.00134486, -6.95591e-05, 0.000293419, 0.999999, 1, 1, 1, 0.266667, 1, 0, 0, 0, 0.000408864, 2.11716e-05, -8.92033e-05, 1, 1, 1, 1, 0.333333, 1, 0, 0, 0, 0.00147795, 7.63996e-05, -0.000322451, 0.999999, 1, 1, 1, 0.4, 1, 0, 0, 0, -0.00114479, -5.91937e-05, 0.000249754, 0.999999, 1, 1, 1, 0.466667, 1, 0, 0, 0, -0.00126696, -6.55506e-05, 0.000276431, 0.999999, 1, 1, 1, 0.6, 1, 0, 0, 0, -2.38791e-06, -1.13157e-07, 5.28991e-07, 1, 1, 1, 1, 0.625, 1, 0, 0, 0, -0.000193014, -9.97678e-06, 4.21311e-05, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=7]
-resource_name = "idle"
+[sub_resource type="Animation" id=9]
 length = 1.04167
 loop = true
 tracks/0/type = "transform"
@@ -730,8 +725,7 @@ tracks/14/imported = true
 tracks/14/enabled = true
 tracks/14/keys = PoolRealArray( 0, 1, 0, 0, 0, 0.0360282, -0.0184643, 0.0433033, 0.998241, 1, 1, 1, 1.04167, 1, 0, 0, 0, 0.0360282, -0.0184643, 0.0433033, 0.998241, 1, 1, 1 )
 
-[sub_resource type="Animation" id=8]
-resource_name = "jump_FALL"
+[sub_resource type="Animation" id=10]
 length = 0.583333
 loop = true
 tracks/0/type = "transform"
@@ -840,8 +834,7 @@ tracks/14/imported = true
 tracks/14/enabled = true
 tracks/14/keys = PoolRealArray( 0, 1, 0, 0, 0, -0.000193014, -9.97678e-06, 4.21311e-05, 1, 1, 1, 1, 0.583333, 1, 0, 0, 0, -0.000193014, -9.97678e-06, 4.21311e-05, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=9]
-resource_name = "jump_UP"
+[sub_resource type="Animation" id=11]
 length = 0.583333
 tracks/0/type = "transform"
 tracks/0/path = NodePath("Armature001/Skeleton:head")
@@ -949,66 +942,66 @@ tracks/14/imported = true
 tracks/14/enabled = true
 tracks/14/keys = PoolRealArray( 0, 1, -0.0132896, 0.150425, 0.0106467, 0.0977526, -5.81712e-06, 4.29072e-05, 0.995211, 1, 1, 1, 0.583333, 1, -0.0132896, 0.150425, 0.0106467, 0.0977526, -5.81712e-06, 4.29072e-05, 0.995211, 1, 1, 1 )
 
-[sub_resource type="AnimationNodeBlend2" id=16]
+[sub_resource type="AnimationNodeBlend2" id=12]
 
-[sub_resource type="AnimationNodeAnimation" id=17]
+[sub_resource type="AnimationNodeAnimation" id=13]
 animation = "jump_UP"
 
-[sub_resource type="AnimationNodeAnimation" id=18]
+[sub_resource type="AnimationNodeAnimation" id=14]
 animation = "jump_FALL"
 
-[sub_resource type="AnimationNodeAnimation" id=19]
+[sub_resource type="AnimationNodeAnimation" id=15]
 animation = "Running"
 
-[sub_resource type="AnimationNodeAnimation" id=20]
+[sub_resource type="AnimationNodeAnimation" id=16]
 animation = "Walking"
 
-[sub_resource type="AnimationNodeAnimation" id=21]
+[sub_resource type="AnimationNodeAnimation" id=17]
 animation = "idle"
 
-[sub_resource type="AnimationNodeAnimation" id=22]
+[sub_resource type="AnimationNodeAnimation" id=18]
 animation = "jump_UP"
 
-[sub_resource type="AnimationNodeAnimation" id=23]
+[sub_resource type="AnimationNodeAnimation" id=19]
 animation = "jump_FALL"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=10]
-blend_point_0/node = SubResource( 17 )
+[sub_resource type="AnimationNodeBlendSpace2D" id=20]
+blend_point_0/node = SubResource( 13 )
 blend_point_0/pos = Vector2( 0, 1 )
-blend_point_1/node = SubResource( 18 )
+blend_point_1/node = SubResource( 14 )
 blend_point_1/pos = Vector2( 0, -1 )
-blend_point_2/node = SubResource( 19 )
+blend_point_2/node = SubResource( 15 )
 blend_point_2/pos = Vector2( 1, 0 )
-blend_point_3/node = SubResource( 20 )
+blend_point_3/node = SubResource( 16 )
 blend_point_3/pos = Vector2( 0.5, 0 )
-blend_point_4/node = SubResource( 21 )
+blend_point_4/node = SubResource( 17 )
 blend_point_4/pos = Vector2( 0, 0 )
-blend_point_5/node = SubResource( 22 )
+blend_point_5/node = SubResource( 18 )
 blend_point_5/pos = Vector2( 1, 1 )
-blend_point_6/node = SubResource( 23 )
+blend_point_6/node = SubResource( 19 )
 blend_point_6/pos = Vector2( 1, -1 )
 min_space = Vector2( 0, -1 )
 
-[sub_resource type="AnimationNodeBlend2" id=11]
+[sub_resource type="AnimationNodeBlend2" id=21]
 
-[sub_resource type="AnimationNodeAnimation" id=12]
+[sub_resource type="AnimationNodeAnimation" id=22]
 animation = "death"
 
-[sub_resource type="AnimationNodeAnimation" id=13]
+[sub_resource type="AnimationNodeAnimation" id=23]
 animation = "Wall slide"
 
-[sub_resource type="AnimationNodeBlendTree" id=14]
-graph_offset = Vector2( 434, 38 )
-nodes/DEAD/node = SubResource( 16 )
+[sub_resource type="AnimationNodeBlendTree" id=24]
+graph_offset = Vector2( 325, 143 )
+nodes/DEAD/node = SubResource( 12 )
 nodes/DEAD/position = Vector2( 1200, 60 )
-nodes/MOVE/node = SubResource( 10 )
+nodes/MOVE/node = SubResource( 20 )
 nodes/MOVE/position = Vector2( 820, 60 )
-nodes/SLIDE/node = SubResource( 11 )
+nodes/SLIDE/node = SubResource( 21 )
 nodes/SLIDE/position = Vector2( 1020, 60 )
-nodes/death/node = SubResource( 12 )
+nodes/death/node = SubResource( 22 )
 nodes/death/position = Vector2( 1080, 340 )
 nodes/output/position = Vector2( 1540, 60 )
-"nodes/wall slide/node" = SubResource( 13 )
+"nodes/wall slide/node" = SubResource( 23 )
 "nodes/wall slide/position" = Vector2( 860, 340 )
 node_connections = [ "output", 0, "DEAD", "DEAD", 0, "SLIDE", "DEAD", 1, "death", "SLIDE", 0, "MOVE", "SLIDE", 1, "wall slide" ]
 
@@ -1895,6 +1888,7 @@ tracks/14/enabled = true
 tracks/14/keys = PoolRealArray( 0, 1, -0.0132896, 0.150425, 0.0106467, 0.0977526, -5.81712e-06, 4.29072e-05, 0.995211, 1, 1, 1, 0.583333, 1, -0.0132896, 0.150425, 0.0106467, 0.0977526, -5.81712e-06, 4.29072e-05, 0.995211, 1, 1, 1 )
 
 [sub_resource type="CapsuleShape" id=34]
+radius = 0.682633
 
 [sub_resource type="CylinderShape" id=35]
 radius = 0.921663
@@ -2000,20 +1994,20 @@ bones/14/bound_children = [  ]
 [node name="player" type="MeshInstance" parent="Active/Armature001/Skeleton"]
 mesh = SubResource( 1 )
 skin = SubResource( 2 )
-material/0 = SubResource( 24 )
+material/0 = SubResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Active"]
-anims/Running = SubResource( 3 )
-anims/Running001 = SubResource( 4 )
-anims/Walking = SubResource( 15 )
-"anims/Wall slide" = SubResource( 5 )
-anims/death = SubResource( 6 )
-anims/idle = SubResource( 7 )
-anims/jump_FALL = SubResource( 8 )
-anims/jump_UP = SubResource( 9 )
+anims/Running = SubResource( 4 )
+anims/Running001 = SubResource( 5 )
+anims/Walking = SubResource( 6 )
+"anims/Wall slide" = SubResource( 7 )
+anims/death = SubResource( 8 )
+anims/idle = SubResource( 9 )
+anims/jump_FALL = SubResource( 10 )
+anims/jump_UP = SubResource( 11 )
 
 [node name="AnimationTree" type="AnimationTree" parent="Active/AnimationPlayer"]
-tree_root = SubResource( 14 )
+tree_root = SubResource( 24 )
 anim_player = NodePath("..")
 active = true
 parameters/DEAD/blend_amount = 0.0
@@ -2119,7 +2113,7 @@ anims/jump_FALL = SubResource( 32 )
 anims/jump_UP = SubResource( 33 )
 
 [node name="AnimationTree" type="AnimationTree" parent="Inactive/AnimationPlayer"]
-tree_root = SubResource( 14 )
+tree_root = SubResource( 24 )
 anim_player = NodePath("..")
 active = true
 parameters/DEAD/blend_amount = 0.0
@@ -2127,7 +2121,7 @@ parameters/MOVE/blend_position = Vector2( 1, 0 )
 parameters/SLIDE/blend_amount = 0.0
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 0.75, 0, 0, 0, -3.27835e-08, -0.75, 0, 0.75, -3.27835e-08, 0, 0, 0 )
+transform = Transform( 0.75, 0, 0, 0, -3.27835e-08, -0.75, 0, 0.75, -3.27835e-08, 0, 0.315399, 0 )
 shape = SubResource( 34 )
 
 [node name="Feet" type="Area" parent="."]

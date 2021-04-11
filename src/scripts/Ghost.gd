@@ -49,7 +49,7 @@ func reset():
 func _on_Area_body_entered(body):
 	#print("stuff")
 	if body.is_in_group("Player") and !started:
-		body.start_recording()
+		#body.start_recording()
 		started = true
 		$AudioStreamPlayer.play()
 		$Active.show()
