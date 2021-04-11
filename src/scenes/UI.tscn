@@ -5,26 +5,6 @@
 [ext_resource path="res://assets/textures/white.png" type="Texture" id=3]
 [ext_resource path="res://assets/fonts/theboldfont.ttf" type="DynamicFontData" id=4]
 
-[sub_resource type="Animation" id=1]
-resource_name = "Teleport"
-tracks/0/type = "value"
-tracks/0/path = NodePath("ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3, 0.7, 1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
-}
-
-[sub_resource type="DynamicFont" id=2]
-size = 48
-outline_size = 4
-font_data = ExtResource( 4 )
-
 [sub_resource type="Shader" id=3]
 code = "shader_type canvas_item;
 uniform sampler2D NOISE_PATTERN;
@@ -62,12 +42,43 @@ shader = SubResource( 3 )
 shader_param/NOISE_PATTERN = SubResource( 5 )
 shader_param/NOISE_PATTERN_2 = SubResource( 7 )
 
+[sub_resource type="Animation" id=1]
+resource_name = "Teleport"
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.7, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="DynamicFont" id=2]
+size = 48
+outline_size = 4
+font_data = ExtResource( 4 )
+
 [node name="UI" type="Control" groups=[
 "UI",
 ]]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource( 8 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource( 3 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -190,16 +201,5 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "0"
 align = 1
 valign = 1
-
-[node name="TextureRect" type="TextureRect" parent="."]
-material = SubResource( 8 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-mouse_filter = 2
-texture = ExtResource( 3 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 [connection signal="timeout" from="GameOverScreen/GameOverTimer" to="." method="_on_GameOverTimer_timeout"]
 [connection signal="pressed" from="GameOverScreen/RestartButton" to="." method="_on_RestartButton_pressed"]

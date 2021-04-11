@@ -49,7 +49,7 @@ func _physics_process(delta):
 	if !Game.running:
 		return
 	$spaceguy.rotation_degrees = $spaceguy.rotation_degrees.linear_interpolate(rotation_target,0.1)
-	slide = (slide+slide_target)/2.0
+	slide = ((slide*4)+slide_target)/5.0
 	print(slide)
 	$spaceguy/AnimationPlayer/AnimationTree.set("parameters/SLIDE/blend_amount",slide)
 	if $WallJumpRange.get_overlapping_bodies().size() > 1:
@@ -108,6 +108,7 @@ func die():
 	$AnimationPlayer.play("Explode")
 	get_tree().call_group("UI","show_game_over")
 	Game.running = false
+	$spaceguy/AnimationPlayer/AnimationTree.set("parameters/DEAD/blend_amount",1)
 
 func _on_JumpCooldown_timeout():
 	jump_ready = true
