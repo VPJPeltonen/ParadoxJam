@@ -73,6 +73,9 @@ texture_disabled = ExtResource( 6 )
 texture_focused = ExtResource( 6 )
 expand = true
 stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )

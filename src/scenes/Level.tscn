@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://src/scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/scripts/Camera.gd" type="Script" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://src/scenes/Tile3.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/audio/exit.wav" type="AudioStream" id=10]
 [ext_resource path="res://src/materials/Level.tres" type="Material" id=11]
+[ext_resource path="res://src/scenes/rock_1.tscn" type="PackedScene" id=12]
+[ext_resource path="res://src/scenes/rock_2.tscn" type="PackedScene" id=13]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -117,6 +119,7 @@ mouse_filter = 2
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.598674, 0.800993, 0, -0.800993, 0.598674, 0, 13.0285, 0 )
+light_energy = 0.5
 
 [node name="RecordStart" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.39311 )
@@ -124,6 +127,18 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.39311 )
 [node name="CollisionShape" type="CollisionShape" parent="RecordStart"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.4692, 0 )
 shape = SubResource( 4 )
+
+[node name="Spatial" type="Spatial" parent="."]
+
+[node name="rock1" parent="Spatial" instance=ExtResource( 12 )]
+
+[node name="rock2" parent="Spatial" instance=ExtResource( 13 )]
+
+[node name="rock3" parent="Spatial" instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -41.9244, 36.1956, -109.582 )
+
+[node name="rock4" parent="Spatial" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.9172, 47.7601, -150.906 )
 [connection signal="body_entered" from="Teleporter" to="Teleporter" method="_on_Teleporter_body_entered"]
 [connection signal="timeout" from="Teleporter/Timer" to="Teleporter" method="_on_Timer_timeout"]
 [connection signal="body_entered" from="RecordStart" to="Player" method="_on_RecordStart_body_entered"]
