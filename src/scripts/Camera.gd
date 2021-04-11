@@ -13,6 +13,6 @@ func _process(delta):
 	if player == null:
 		player = get_tree().get_nodes_in_group("Player")[0]
 	var target = Vector3(global_transform.origin.x,
-						player.global_transform.origin.y+2,
+						player.global_transform.origin.y+10,
 						player.global_transform.origin.z)
 	global_transform.origin = global_transform.origin.linear_interpolate(target,delta*speed)

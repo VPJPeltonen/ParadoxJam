@@ -1029,8 +1029,9 @@ height = 0.47286
 [sub_resource type="SphereMesh" id=29]
 
 [sub_resource type="SpatialMaterial" id=30]
+flags_unshaded = true
 params_cull_mode = 2
-albedo_color = Color( 1, 0, 0, 1 )
+albedo_color = Color( 0, 0.0470588, 1, 1 )
 
 [sub_resource type="Animation" id=31]
 length = 2.0

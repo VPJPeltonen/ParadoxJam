@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/scenes/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/scripts/Main.gd" type="Script" id=2]
 [ext_resource path="res://assets/fonts/Sunscreen-Septaline.otf" type="DynamicFontData" id=3]
 [ext_resource path="res://assets/audio/First Contact.wav" type="AudioStream" id=4]
 [ext_resource path="res://assets/audio/Click_04.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/textures/playbutton.png" type="Texture" id=6]
+[ext_resource path="res://assets/textures/playbutton_hover.png" type="Texture" id=7]
+[ext_resource path="res://assets/textures/playbutton_pressed.png" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 48
@@ -54,19 +57,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="MainUI/MainMenu"]
+[node name="Button" type="TextureButton" parent="MainUI/MainMenu"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -19.0
-margin_top = -10.0
-margin_right = 19.0
-margin_bottom = 10.0
-text = "Play"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+margin_left = -51.5
+margin_top = -32.5
+margin_right = 51.5
+margin_bottom = 32.5
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 7 )
+texture_disabled = ExtResource( 6 )
+texture_focused = ExtResource( 6 )
+expand = true
+stretch_mode = 4
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )

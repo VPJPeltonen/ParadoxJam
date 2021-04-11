@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://src/scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/scripts/Camera.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://src/scenes/Tile2.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/scenes/Tile3.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/audio/exit.wav" type="AudioStream" id=10]
+[ext_resource path="res://src/materials/Level.tres" type="Material" id=11]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -27,8 +28,9 @@ extents = Vector3( 1, 25.9072, 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 250, 0, 0, 0 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Floor"]
+transform = Transform( 1, 0, 0, 0, 4.26737, 0, 0, 0, 1, 0, -3.2954, 0 )
 mesh = SubResource( 1 )
-material/0 = null
+material/0 = ExtResource( 11 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Floor"]
 shape = SubResource( 2 )
