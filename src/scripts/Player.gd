@@ -16,6 +16,9 @@ var recorder_class = load("res://src/scripts/recorder.gd")
 var recorder
 var time = 0.0
 var time_running = true
+var rotation_target = Vector3(0,0,0)
+var slide_target = 0.0
+var slide = 0.0
 
 onready var grunts = [grunt1,grunt2,grunt3,grunt4,grunt5,grunt6]
 onready var rng = RandomNumberGenerator.new()
@@ -45,11 +48,21 @@ func _physics_process(delta):
 										global_transform.origin.z)
 	if !Game.running:
 		return
+	$spaceguy.rotation_degrees = $spaceguy.rotation_degrees.linear_interpolate(rotation_target,0.1)
+	slide = (slide+slide_target)/2.0
+	print(slide)
+	$spaceguy/AnimationPlayer/AnimationTree.set("parameters/SLIDE/blend_amount",slide)
+	if $WallJumpRange.get_overlapping_bodies().size() > 1:
+		slide_target = 1.0
+	else:
+		slide_target = 0.0
 	var dir :Vector3 = velocity*0.9
 	if Input.is_action_pressed("left"):
 		dir += Vector3(0,0,1)*speed
+		rotation_target = Vector3(0,180,0)
 	elif Input.is_action_pressed("right"):
 		dir -= Vector3(0,0,1)*speed
+		rotation_target = Vector3(0,0,0)
 	if Input.is_action_pressed("jump") and $Feet.get_overlapping_bodies().size() > 1 and jump_ready:
 		jump_power += Vector3(0,300,0)
 		$CPUParticles.emitting = true
@@ -77,7 +90,10 @@ func _physics_process(delta):
 	jump_power = jump_power*0.95
 	#print(jump_power)
 	velocity = dir
-	move_and_slide(dir*delta)
+	var move = move_and_slide(dir*delta)
+	
+	$spaceguy/AnimationPlayer/AnimationTree.set("parameters/MOVE/blend_position",Vector2(abs(move.z)/16.0,move.y/22.0))
+	#$AnimationTree.set("parameters/"+move_par+"/blend_position",value)
 
 func stop_recording():
 	$RecordTimer.stop()
